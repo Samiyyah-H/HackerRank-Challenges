@@ -1,0 +1,25 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void update(int *a, int *b) {
+    int initial_a = *a; // need to store the original *a as a pointer does not remember the past value 
+    int sum = *a + *b;
+    *a = sum; // if we didn't have the initial_a then the value from the sum then became the new *a
+    
+    int diff = abs(initial_a - *b); // this would change everything if the past value was not stored
+    *b = diff;
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    update(&a,&b);
+    
+    cout << a << endl;
+    cout << b << endl;
+    return 0;
+}  
