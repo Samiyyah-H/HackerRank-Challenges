@@ -1,0 +1,31 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+ int n;
+ cin >> n; 
+ 
+ int arr[n];
+ for(int i = 0; i < n; ++i) { // i is the index, index does not exceed the number of space on array 
+     cin >> arr[i];
+ }
+ 
+ // print in reverse order 
+ for(int i = n - 1; i >= 0; --i){ // the (--i) makes it move backwards instead to print it forward you would put (i++)
+     cout << arr[i]; // output arr
+     if (i != 0) {
+         cout << " "; // create space between the numbers
+     }
+
+ }
+  cout << endl; 
+ 
+ 
+
+    return 0;
+}
