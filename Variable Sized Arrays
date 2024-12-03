@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+   
+   int n, q;
+   cin >> n >> q; // this pulls the variable-length and the number of queries 
+   
+   //create a vector of vectors 
+   vector<vector<int>> myArrays(n); // creates Arrays and begins to store the variable length //
+   
+   for (int i = 0; i < n; i++){
+    int k;
+    cin >> k; // k is the length of the array at whatever the index is
+    myArrays[i].resize(k); // the array size will change as more numbers are added //
+    
+    for (int j = 0; j < k; j++){
+        cin >> myArrays[i][j]; // these are the numbers in those specific spots 
+    }
+   }
+   
+   for (int i = 0; i < q; i++){
+    int x,y;
+    cin >> x >> y; // x is the arrays index(position), y is the element index (number)//
+    cout << myArrays[x][y] << endl;
+   }
+   
+    
+    return 0;
+}
